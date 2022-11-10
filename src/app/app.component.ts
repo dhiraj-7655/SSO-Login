@@ -23,6 +23,7 @@ export class AppComponent {
     this._msalService.loginPopup().subscribe((response: AuthenticationResult)=>{
       this._msalService.instance.setActiveAccount(response.account);
       console.log("inside:p",response);
+      this.getActivepro();
     },(error)=>{
       console.log("erroe:--",error)
     })
@@ -32,4 +33,8 @@ export class AppComponent {
     this._msalService.logout();
   }
 
+  getActivepro(){
+    console.log("hey i'm active account:-",this._msalService.instance.getActiveAccount());
+    console.log("cacsa:-",this._msalService.instance.);
+  }
 }
